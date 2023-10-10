@@ -5,16 +5,16 @@ export interface Options {
     compare?: (left: string, right: string) => number;
 }
 
-export default function sortKeys<T extends Record<string, any>>(
+export default function sortObjectKeys<T extends Record<string, any>>(
     object: T,
     options?: Options
 ): T;
-export default function sortKeys<T>(
+export default function sortObjectKeys<T>(
     object: T[],
     options?: Options
 ): T[];
 
-export default function sortKeys<T>(object: T | T[], options : Options = {}): T | T[] {
+export default function sortObjectKeys<T>(object: T | T[], options : Options = {}): T | T[] {
     if (!isPlainObject(object) && !Array.isArray(object)) {
         throw new TypeError('Expected a plain object or array');
     }
